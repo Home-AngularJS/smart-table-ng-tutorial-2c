@@ -6,7 +6,7 @@ import { delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class UserListService {
   fetchUsers(): Observable<User[]> {
     return of(users)
       .pipe(delay(2000));
