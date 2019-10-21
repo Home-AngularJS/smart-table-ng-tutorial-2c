@@ -1,0 +1,31 @@
+<div id="users-table" stTable #table="stTable">
+  <div *ngIf="table.busy" class="loading-indicator">Loading ...</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th stSort="name.first" stSortCycle="true">First name</th>
+				<th stSort="name.last">Last name</th>
+				<th stSort="birthDate">Birth date</th>
+				<th stSort="job">Job</th>
+				<th stSort="balance">Balance</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let user of table.items">
+				<td>{{user.value.name.first}}</td>
+				<td>{{user.value.name.last | uppercase}}</td>
+				<td>{{user.value.birthDate | date}}</td>
+				<td>{{user.value.job | uppercase}}</td>
+				<td>{{user.value.balance | currency}}
+			</tr>
+		</tbody>
+	</table>
+	<div stPagination #pager="stPagination">
+		<p>
+			<button (click)="pager.selectPreviousPage()" [disabled]="!pager.isPreviousPageEnabled()">&#x25C4;</button>
+			<em>{{pager.length > 0 ? pager.lowerBoundIndex + 1 : 0}}</em> - <em>{{pager.higherBoundIndex + 1}}</em> of <em>{{pager.length}} </em>
+			<button (click)="pager.selectNextPage()" [disabled]="!pager.isNextPageEnabled()">&#x25BA;</button>
+		</p>
+	</div>
+</div>
