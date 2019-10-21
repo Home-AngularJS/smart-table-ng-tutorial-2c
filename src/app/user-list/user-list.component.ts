@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SmartTable, from, TableState } from 'smart-table-ng';
 import { UserListService } from '../core/service/user-list.service';
 import { DefaultSettingsService } from '../core/service/default-settings.service';
+import { debounceTime, distinctUntilChanged, startWith, tap, delay } from 'rxjs/operators';
+import { merge, fromEvent } from 'rxjs';
 
 const providers = [{
   provide: SmartTable,
@@ -14,5 +16,20 @@ const providers = [{
   templateUrl: './user-list.component.html',
   providers
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit, AfterViewInit {
+
+  ngOnInit() {
+    console.log('ngOnInit')
+  }
+
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit')
+    merge()
+        .pipe(
+            tap(() =>
+                console.log('---------------------------')
+            ));
+  }
+
 }
+
