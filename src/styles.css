@@ -52,16 +52,16 @@ button {
     font: inherit;
     padding: 0.3em 0.5em;
     background: inherit;
-    color: #006969;
-    border: 1px solid currentColor;
+    color: #55BDBD;
+    border: 0;
     min-width: 5em;
     transition: all 0.3s;
     outline: none;
 }
 
 button:not(:disabled):hover {
-    background: #006969;
-    color: white;
+    color: #006969;
+    cursor: pointer;
 }
 
 button:disabled {

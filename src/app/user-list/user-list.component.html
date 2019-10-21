@@ -24,9 +24,10 @@
 
 	<div stPagination #pager="stPagination">
 		<p>
-			<button (click)="pager.selectPreviousPage()" [disabled]="!pager.isPreviousPageEnabled()">&#x25C4;</button>
+			<button (click)="pager.selectPreviousPage()" [disabled]="!pager.isPreviousPageEnabled()" title="Previous">&#x25C4;</button>
 			<em>{{pager.length > 0 ? pager.lowerBoundIndex + 1 : 0}}</em> - <em>{{pager.higherBoundIndex + 1}}</em> of <em>{{pager.length}} </em>
-			<button (click)="pager.selectNextPage()" [disabled]="!pager.isNextPageEnabled()">&#x25BA;</button>
+			<button (click)="pager.selectNextPage()" [disabled]="!pager.isNextPageEnabled()" title="Next">&#x25BA;</button>
+<!--			<button (click)="pager.selectPage(3)">Select Page</button>-->
 		</p>
 	</div>
 </div>
