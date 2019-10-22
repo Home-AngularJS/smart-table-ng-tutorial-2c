@@ -14,8 +14,8 @@
     "@angular/router": "~7.0.0",
     "@angular/compiler": "~7.0.0",
     "@angular/platform-browser": "~7.0.0",
-    "angular-in-memory-web-api": "0.6.0",
-    "@angular/platform-browser-dynamic": "~7.0.0"
+    "@angular/platform-browser-dynamic": "~7.0.0",
+    "angular-in-memory-web-api": "0.6.0"
   },
   "scripts": {
     "ng": "ng",
