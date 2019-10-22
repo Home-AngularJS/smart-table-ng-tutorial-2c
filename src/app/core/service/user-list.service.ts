@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { users, User } from './users';
-import {of, Observable, merge} from 'rxjs/index';
+import { User, users } from './data';
+import { of, Observable, merge } from 'rxjs/index';
 import { debounceTime, distinctUntilChanged, startWith, tap, delay } from 'rxjs/operators';
 
 @Injectable({
@@ -8,15 +8,15 @@ import { debounceTime, distinctUntilChanged, startWith, tap, delay } from 'rxjs/
 })
 export class UserListService {
 
-  fetchUsers(): Observable<User[]> {
+  loadUsers(): Observable<User[]> {
     return of(users)
         .pipe(
             tap(() =>
-                this.loadLessonsPage()
+                this.loadUsersPage()
             ));
   }
 
-  loadLessonsPage() {
+  loadUsersPage() {
     console.log('===========================')
     // delay(2000);
   }

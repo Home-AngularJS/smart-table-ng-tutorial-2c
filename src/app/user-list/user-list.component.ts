@@ -7,7 +7,7 @@ import { merge, fromEvent } from 'rxjs';
 
 const providers = [{
   provide: SmartTable,
-  useFactory: (Users: UserListService, settings: TableState) => from(Users.fetchUsers(), settings),
+  useFactory: (Users: UserListService, settings: TableState) => from(Users.loadUsers(), settings),
   deps: [UserListService, DefaultSettingsService]
 }];
 

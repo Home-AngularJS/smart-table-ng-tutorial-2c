@@ -16,14 +16,12 @@ export interface User {
   balance: number;
 }
 
+export const users: User[] = [];
 const firstNames = ['Laurent', 'Charlie', 'Elsa', 'Bob', 'Blandine', 'Raymond', 'Jade', 'Athanase', 'Antoine', 'Benjamin', 'Solenne', 'Alice', 'Boris', 'Cedric', 'Camille', 'Isabelle', 'Olivier', 'Nicolas', 'Amaury', 'Odile'];
 const lastNames = ['Renard', 'Dupraz', 'Dupont', 'Leponge', 'Robin', 'Blasec', 'Verton', 'Albert', 'Vian', 'Bertin', 'Chevalier', 'Romus', 'Cassare', 'Jourdin', 'Lazarus', 'Blanc', 'Vacon', 'Boulus', 'Giroux', 'Marcelin'];
 const jobs = [Job.DEV, Job.QA, Job.MANAGER]
-
-const items: User[] = [];
-
 for (let i = 0; i < 100; i++) {
-  items.push({
+  users.push({
     name: {
       first: firstNames[Math.floor(Math.random() * 20)],
       last: lastNames[Math.floor(Math.random() * 20)]
@@ -33,5 +31,3 @@ for (let i = 0; i < 100; i++) {
     job: jobs[Math.floor(Math.random() * 3)]
   });
 }
-
-export const users = items;
